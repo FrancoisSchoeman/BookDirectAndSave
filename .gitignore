@@ -23,6 +23,7 @@ env/
 .env.test.local
 .env.production.local
 component_backup.txt
+env.py
 
 npm-debug.log*
 yarn-debug.log*

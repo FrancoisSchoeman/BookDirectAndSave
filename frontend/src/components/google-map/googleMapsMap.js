@@ -1,8 +1,8 @@
 import { useState, useEffect, memo, useCallback } from 'react';
 import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
 
-// TODO: Move to .env
-const googleMapsAPIKey = "AIzaSyCezd6t3424wEvqTQWxcjhNZd64YDkpPZ0";
+
+const googleMapsAPIKey = process.env.GOOGLE_MAPS_API_KEY;
 
 
 export default function MyGoogleMaps({ center, zoom, mapMargin, children }) {

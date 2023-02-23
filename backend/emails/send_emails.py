@@ -2,13 +2,7 @@ import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
-# TODO: Change Email and SMTP server and add to .env
-
-EMAIL = "francois@gardenrouteandkleinkaroo.co.za"
-PASSWORD = "Es#r+&yQ)tQ9"
-SMTP_SERVER = "mail.gardenrouteandkleinkaroo.co.za"
-SMTP_PORT = 587
-TO_EMAIL = "francois.schoeman15@gmail.com"
+from env import EMAIL, PASSWORD, SMTP_SERVER, SMTP_PORT, TO_EMAIL
 
 def send_email(name, phone, to_email, subject, message):
     with smtplib.SMTP(SMTP_SERVER, SMTP_PORT) as server:

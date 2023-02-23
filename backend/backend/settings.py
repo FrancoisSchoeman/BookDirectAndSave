@@ -17,12 +17,15 @@ from datetime import timedelta
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+from env import DJANGO_SECRET_KEY, JWT_SIGNING_KEY, DJANGO_ALLOWED_HOSTS, DJANGO_CORS_ORIGIN_WHITELIST, DJANGO_DATABASE
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-yff-na^)$du3c0i9yni7(udlo$&qx3c$=1(dehpvhdrab61_!j'
+# SECRET_KEY = 'django-insecure-yff-na^)$du3c0i9yni7(udlo$&qx3c$=1(dehpvhdrab61_!j'
+SECRET_KEY = DJANGO_SECRET_KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -33,17 +36,13 @@ SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(days=1),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=30),
     'ROTATE_REFRESH_TOKENS': True,
-    'SIGNING_KEY': "f3d12a7c1a479566bb133988f93ceb75",
+    'SIGNING_KEY': JWT_SIGNING_KEY,
 }
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = DJANGO_ALLOWED_HOSTS
 
 
-CORS_ORIGIN_WHITELIST = [
-    'http://localhost:3000',
-    'http://192.168.1.110:3000'
-]
-
+CORS_ORIGIN_WHITELIST = DJANGO_CORS_ORIGIN_WHITELIST
 
 
 CORS_ORIGIN_ALLOW_ALL = True
@@ -140,14 +139,7 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'book_direct_and_save', 
-        'USER': 'postgres', 
-        'PASSWORD': 'Myneensyne-21',
-        'HOST': '127.0.0.1', 
-        'PORT': '5432',
-    }
+    'default': DJANGO_DATABASE
 }
 
 
