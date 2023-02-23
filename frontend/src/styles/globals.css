@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;700&display=swap");
+
+* {
+  font-family: "Quicksand", sans-serif;
+  font-weight: 700;
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  text-align: center;
+}
+
+body {
+  text-align: center;
+}
+
+h1 {
+  font-size: 50px;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+/* Main Styles */
+
+.mainSection {
+  padding: 2rem;
+  margin: 0 auto;
+}
+
+.mainDoubleColumn {
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.mainSubHeading {
+  color: #484848;
+  text-transform: uppercase;
+}
+
+.mainSmallHeading {
+  color: #777777;
+}
+
+.mainList {
+  color: #777777;
+  list-style-position: inside;
+}
+
+.mainHorizontalRule {
+  width: 40%;
+  margin: 2rem auto;
+  border-top: 2px solid #005990;
+}
+
+.mainParagraph {
+  font-size: 17px;
+  padding: 1rem 0;
+  color: #777777;
+}
+
+.mainTab {
+  width: 90%;
+  margin: 4rem auto;
+}
+
+.mainTab .MuiTabs-flexContainer {
+  justify-content: center !important;
+}
+
+.mainTab .MuiTabs-flexContainer button {
+  font-size: 20px;
+  color: #484848;
+}
+
+.mainTab .MuiTabs-flexContainer .Mui-selected {
+  color: #005990;
+}
+
+.iconList {
+  list-style-type: none;
+  list-style-position: inside;
+  font-size: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.iconList li {
+  padding: 0.2rem 0;
+  color: #484848;
+}
+
+.iconList a {
+  text-decoration: none;
+  color: #484848;
+  transition: 0.3s ease-in-out;
+}
+
+.iconList a:hover {
+  color: #005990;
+}
+
+.icon {
+  color: #005990;
+}
+
+@media screen and (max-width: 900px) {
+  .mainDoubleColumn {
+    flex-wrap: wrap;
+  }
+}

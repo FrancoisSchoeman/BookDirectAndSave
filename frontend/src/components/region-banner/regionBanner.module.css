@@ -1,0 +1,81 @@
+.regionBanner {
+  width: 90%;
+  box-sizing: border-box;
+  text-align: left;
+  color: white;
+  line-height: 1.5;
+  margin: 2rem auto;
+}
+
+.bannerColumn {
+  display: flex;
+  height: 17rem;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.imageContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  flex: 1;
+  background-position: top center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.5);
+  transition: 0.5s ease-in-out;
+}
+
+.imageContainer:hover {
+  box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+.imageContainer:hover .frontOverlay {
+  display: none !important;
+}
+
+.image {
+}
+
+.frontOverlay {
+  box-sizing: border-box;
+  padding: 2rem;
+  transition: 0.5s ease-in-out;
+}
+
+.imageOverlay {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-content: flex-end;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  height: 17rem;
+  transition: all 0.5s ease-in-out;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.imageOverlay:hover {
+  opacity: 1;
+}
+
+.imageOverlayText {
+  box-sizing: border-box;
+  padding: 2rem;
+}
+
+@media screen and (max-width: 900px) {
+  .bannerColumn {
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .imageContainer {
+    min-height: 17rem;
+  }
+}

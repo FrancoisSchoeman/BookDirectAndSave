@@ -1,0 +1,139 @@
+.listingsContainer {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.mainHeading {
+  margin: 2rem;
+  padding: 2rem 0;
+  border-bottom: 1px solid #d8dce1;
+  text-align: left;
+}
+
+.sortBySection {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2rem;
+}
+
+.sortBySelect {
+  appearance: none;
+  background-color: #005990;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  padding: 0.25rem;
+  margin-left: 0.5rem;
+  font-size: inherit;
+  cursor: pointer;
+}
+
+.sortBySelect::after {
+  border: none;
+}
+
+.mainCard {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  justify-content: space-between;
+  margin: 4rem auto;
+  background-color: #f7f8f9;
+  gap: 1rem;
+}
+
+.mainCard p {
+  margin: 0.25rem;
+}
+
+.singleCard {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin: 0 auto;
+  align-items: stretch;
+  width: 100%;
+  background-color: white;
+  border-radius: 5px;
+  transition: 0.3s ease-in-out;
+  box-shadow: 0px 5px 5px -8px rgba(0, 0, 0, 0.75);
+}
+
+.singleCard:hover {
+  transition-delay: 0.1s;
+  box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+.imageCard {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: relative;
+  overflow: hidden;
+  border-radius: 5px;
+  width: 300px;
+}
+
+.listingImage {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  transform: scale(1.05);
+  transition: 0.3s ease-in-out;
+}
+
+.listingImage:hover {
+  transform: scale(1.15);
+}
+
+.bottomCard {
+  display: flex;
+  z-index: 10;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0.5rem;
+  padding-left: 1rem;
+  overflow: hidden;
+}
+
+.infoCard {
+  display: flex;
+  font-size: 14px;
+  gap: 0.5rem;
+  justify-content: flex-start;
+}
+
+.price {
+  font-size: 28px;
+  position: absolute;
+  bottom: 0;
+  text-indent: 1rem;
+  color: #fff;
+}
+
+.title {
+  font-size: 16px;
+  overflow: hidden;
+  max-width: 40ch;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.location {
+  font-size: 14px;
+  color: #949ca5;
+  overflow: hidden;
+  max-width: 40ch;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media screen and (max-width: 600px) {
+  .singleCard {
+    width: 90%;
+  }
+
+  .imageCard {
+    width: 100%;
+  }
+}

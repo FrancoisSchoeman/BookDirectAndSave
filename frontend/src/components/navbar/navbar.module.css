@@ -1,0 +1,133 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  padding: 0.5rem 1rem;
+  background-color: #fff;
+  border-bottom: 1px solid #d8dce1;
+  font-size: 17px;
+  box-shadow: 0px 5px 10px -7px rgba(0, 0, 0, 0.3);
+  color: #484848;
+  flex-wrap: wrap;
+  overflow: hidden;
+  margin: 0;
+}
+
+.navbarMenu {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+  overflow: hidden;
+  gap: 0.5rem;
+  margin: 0.5rem 1rem;
+}
+
+.navbarSmallMenu a,
+.navbarMenu a,
+.navbarSmallMenu span,
+.navbarMenu span {
+  color: #484848;
+  text-decoration: none;
+  border-bottom: 2px solid white;
+  transition: 0.3s ease-in-out;
+}
+
+.navbarSmallMenu a:hover,
+.navbarSmallMenu a:active,
+.navbarMenu a:hover,
+.navbarMenu a:active,
+.navbarSmallMenu span:hover,
+.navbarSmallMenu span:active,
+.navbarMenu span:hover,
+.navbarMenu span:active {
+  color: #005990;
+  border-bottom: 2px solid #005990;
+}
+
+.navbarLinks {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+  overflow: hidden;
+
+  color: #484848;
+  text-decoration: none;
+  border-bottom: 2px solid white;
+  transition: 0.3s ease-in-out;
+}
+
+.navbarLinks li {
+  display: inline;
+  list-style: none;
+  margin: 0 0.5rem;
+}
+
+.navbarLogo {
+  max-width: 200px;
+}
+
+.navbarLoginRegister {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+  overflow: hidden;
+  gap: 1rem;
+  margin: 0.5rem 1rem;
+}
+
+.navbarProfileMenu {
+  margin-top: 50px;
+}
+
+.navbarProfileMenu a {
+  padding: 0.25rem 1rem;
+}
+
+.navbarLogOutButton {
+  cursor: pointer;
+  color: #005990;
+  transition: 0.3s ease-in-out;
+}
+
+.navbarLogOutButton:hover {
+  color: black;
+}
+
+.navbarActive {
+  color: #005990 !important;
+  border-bottom: 2px solid #005990 !important;
+}
+
+@media screen and (max-width: 900px) {
+  .navbarMenu {
+    padding-top: 1rem;
+    flex-direction: column-reverse;
+    align-content: flex-start;
+    font-size: 19px;
+    line-height: 2;
+  }
+
+  .navbarMenu ul {
+    list-style: none;
+  }
+
+  .navbarDesktop {
+    display: none;
+  }
+
+  .navbarSmallMenu {
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    gap: 0.5rem;
+    margin: 0;
+    font-size: 19px;
+  }
+}

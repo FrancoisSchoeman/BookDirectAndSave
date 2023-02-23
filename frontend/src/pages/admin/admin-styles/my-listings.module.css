@@ -1,0 +1,26 @@
+.myListingsPage {
+  padding: 4rem;
+  background-color: #f7f8f9;
+}
+
+.myListingsTable {
+  padding: 1rem;
+  margin: 0 auto;
+  background-color: #fff;
+  border-collapse: collapse;
+}
+
+.myListingsTable th,
+.myListingsTable td {
+  border-top: 1px solid #f7f8f9;
+  padding: 0.5rem;
+}
+
+.myListingsThumb {
+  max-width: 150px;
+  border-radius: 5px;
+}
+
+.myListingsClickable {
+  cursor: pointer;
+}
