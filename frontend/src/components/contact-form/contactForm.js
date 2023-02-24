@@ -13,12 +13,10 @@ export default function ContactForm(props) {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
 
     const mutation = useMutation((data) => {
-        return axios.post("http://localhost:8000/api/contact", data);
+        return axios.post(`${BACKEND_URL}/api/contact`, data);
     });
 
     const onSubmit = (data) => {
-        console.log({ ...data, subject: "Contact Form Submission from Book Direct And Save Website" });
-        // TODO: Send data to backend for emails to admin
         mutation.mutate({ ...data, subject: "Contact Form Submission from Book Direct And Save Website" }, {
             onSuccess: () => {
                 setSuccessMessage(true);

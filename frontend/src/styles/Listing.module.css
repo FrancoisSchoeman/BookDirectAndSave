@@ -1,6 +1,5 @@
 .listingContainer {
-  max-width: 1200px;
-  margin: auto;
+  margin: 1rem;
 }
 
 .mainHeading {
@@ -51,7 +50,7 @@
 .mainContent {
   position: relative;
   width: 100%;
-  margin: auto;
+  margin: 2rem auto;
   display: flex;
   justify-content: space-between;
   overflow: hidden;
@@ -62,7 +61,7 @@
 .leftContent {
   width: 70%;
   background-color: white;
-  margin: 2rem 0;
+  /* margin: 2rem 0; */
   padding: 2rem;
   border-radius: 5px;
   text-align: left;
@@ -74,7 +73,7 @@
 
 .rightContent {
   min-width: 300px;
-  margin: 2rem 0;
+  /* margin: 2rem 0; */
 }
 
 .price {
