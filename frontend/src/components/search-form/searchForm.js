@@ -11,7 +11,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import { addDays } from 'date-fns';
 
 import { useQuery } from '@tanstack/react-query';
-import { getListingTypes } from '@/pages/api/listingTypeApi';
+import { getListingTypes } from '@/pages/api/listingsMetaDataApi';
 
 import Router from 'next/router';
 

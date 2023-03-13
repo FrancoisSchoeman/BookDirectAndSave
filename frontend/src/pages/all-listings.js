@@ -58,40 +58,41 @@ export default function AllListings() {
                         {listings?.length === undefined ? <span></span> : <span>{listings?.length} Rentals</span>}
                         <span>
                             Sort By:
-                            <select className={listingStyles.sortBySelect} onChange={handleSortByChange} value={sortByValue}>
-                                <option disabled selected value="" >Choose</option>
-                                <option value="titleAscending">Title (asc)</option>
-                                <option value="titleDescending">Title (desc)</option>
-                                <option value="locationAscending">Location (asc)</option>
-                                <option value="locationDescending">Location (desc)</option>
-                                <option value="lowPrice">Price (low to high)</option>
-                                <option value="highPrice">Price (high to low)</option>
-                                <option value="uploadDate">Upload Date</option>
-                            </select>
+                                <select className={listingStyles.sortBySelect} onChange={handleSortByChange} value={sortByValue}>
+                                    <option disabled selected value="" >Choose</option>
+                                    <option value="titleAscending">Title (asc)</option>
+                                    <option value="titleDescending">Title (desc)</option>
+                                    <option value="locationAscending">Location (asc)</option>
+                                    <option value="locationDescending">Location (desc)</option>
+                                    <option value="lowPrice">Price (low to high)</option>
+                                    <option value="highPrice">Price (high to low)</option>
+                                    <option value="uploadDate">Upload Date</option>
+                                </select>
                         </span>
                     </div> */}
                     </div>
 
                     <div className={listingStyles.mainCard}>
-                        {listings?.results.map((listing) => (
-                            <div key={listing.id} className={listingStyles.singleCard} onClick={() => { router.push(`/listing/${listing.url}`) }}>
-                                <div className={listingStyles.imageCard}>
-                                    {listing.gallery && <img className={listingStyles.listingImage} src={listing.gallery[0]['image']} alt={listing.title} />}
-                                    <p className={listingStyles.price}>R{listing.price} /night</p>
-                                </div>
-                                <div className={listingStyles.bottomCard}>
-                                    <p className={listingStyles.title}>{listing.title}</p>
-                                    <p className={listingStyles.location}>{listing.location}{listing.city && `, ${listing.city['city']}`} {listing.province && `, ${listing.province['province']}`}</p>
-                                    <p className={listingStyles.title}>{listing.description}</p>
-                                    <div className={listingStyles.infoCard}>
-                                        <p><FontAwesomeIcon icon={faBed} /> {listing.bedrooms} Bedrooms</p>
-                                        <p><FontAwesomeIcon icon={faBath} /> {listing.bathrooms} Bathrooms</p>
-                                        <p><FontAwesomeIcon icon={faUser} /> {listing.guests} Guests</p>
+                        {listings?.results.length === 0 ? <p>No listings found</p> :
+                            listings?.results.map((listing) => (
+                                <div key={listing.id} className={listingStyles.singleCard} onClick={() => { router.push(`/listing/${listing.url}`) }}>
+                                    <div className={listingStyles.imageCard}>
+                                        {listing.gallery && <img className={listingStyles.listingImage} src={listing.gallery[0]['image']} alt={listing.title} />}
+                                        <p className={listingStyles.price}>R{listing.price} /night</p>
                                     </div>
-                                    <p>{listing.listing_type && listing.listing_type['listing_type']}</p>
+                                    <div className={listingStyles.bottomCard}>
+                                        <p className={listingStyles.title}>{listing.title}</p>
+                                        <p className={listingStyles.location}>{listing.location}{listing.city && `, ${listing.city['city']}`} {listing.province && `, ${listing.province['province']}`}</p>
+                                        <p className={listingStyles.title}>{listing.description}</p>
+                                        <div className={listingStyles.infoCard}>
+                                            <p><FontAwesomeIcon icon={faBed} /> {listing.bedrooms} Bedrooms</p>
+                                            <p><FontAwesomeIcon icon={faBath} /> {listing.bathrooms} Bathrooms</p>
+                                            <p><FontAwesomeIcon icon={faUser} /> {listing.guests} Guests</p>
+                                        </div>
+                                        <p>{listing.listing_type && listing.listing_type['listing_type']}</p>
+                                    </div>
                                 </div>
-                            </div>
-                        ))}
+                            ))}
                     </div>
                 </div>
             </div>

@@ -55,4 +55,11 @@ export const getSingleListing = async ({ queryKey }) => {
 }
 
 
+export const deleteListing = async (listingId) => {
+
+    const response = await listingsApi.delete(`listings/${listingId}/`);
+    return response.data;
+}
+
+
 listingsApi.defaults.headers.common['Content-Type'] = 'application/json';
