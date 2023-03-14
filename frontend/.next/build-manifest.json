@@ -29,11 +29,6 @@
       "static/chunks/webpack.js",
       "static/chunks/main.js",
       "static/chunks/pages/admin/add-listing.js"
-    ],
-    "/listing/[listingUrl]": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/listing/[listingUrl].js"
     ]
   },
   "ampFirstPages": []

@@ -16,7 +16,10 @@
   text-align: left;
 }
 
-.form input,
+.datePicker {
+}
+
+/* .form input,
 .form textarea {
   padding: 1rem 0.5rem;
   border: 1px solid #005990;
@@ -27,7 +30,7 @@
   text-align: center;
   background-color: #eff0f1;
   resize: none;
-}
+} */
 
 .fieldsContainer {
   display: flex;

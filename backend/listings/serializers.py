@@ -72,6 +72,8 @@ class ListingSerializer(serializers.ModelSerializer):
 
     def get_url(self, instance):
         return slugify(f"{instance.title}-{instance.id}")
+
+    
         
     class Meta:
         model = Listing

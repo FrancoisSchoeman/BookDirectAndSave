@@ -8,26 +8,32 @@ import Navbar from '@/components/navbar/navbar';
 import ShapeDivider from '@/components/shape-divider/shapeDivider';
 import Footer from '@/components/footer/footer';
 
+// Required for MUI date pickers
+import { LocalizationProvider } from '@mui/x-date-pickers';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+
 import { SessionProvider } from "next-auth/react"
 
 export default function App({ Component, pageProps: { session, ...pageProps } }) {
   return (
     <SessionProvider session={session}>
       <QueryClientProvider client={new QueryClient()}>
-        <ParallaxProvider>
+        <LocalizationProvider dateAdapter={AdapterDayjs}>
+          <ParallaxProvider>
 
-          <Navbar />
-          <div id='back-to-top-anchor' style={{ marginBottom: "80px" }}></div>
+            <Navbar />
+            <div id='back-to-top-anchor' style={{ marginBottom: "80px" }}></div>
 
-          <Component {...pageProps} />
+            <Component {...pageProps} />
 
-          <ShapeDivider color="#ffffff">
-            <Footer />
-          </ShapeDivider>
+            <ShapeDivider color="#ffffff">
+              <Footer />
+            </ShapeDivider>
 
-          <ReactQueryDevtools initialIsOpen={false} />
+            <ReactQueryDevtools initialIsOpen={false} />
 
-        </ParallaxProvider>
+          </ParallaxProvider>
+        </LocalizationProvider>
       </QueryClientProvider>
     </SessionProvider>
   )

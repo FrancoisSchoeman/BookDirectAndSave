@@ -10,6 +10,8 @@ import { getListingTypes, getListingCities, getListingProvinces, getListingAmeni
 
 import axios from 'axios';
 
+import dayjs from 'dayjs';
+import { MobileTimePicker } from '@mui/x-date-pickers/MobileTimePicker';
 
 export default function AddListing() {
     const { userData, isLoading, error, session, status } = useUserData();
@@ -23,6 +25,8 @@ export default function AddListing() {
     const router = useRouter();
 
     const [successMessage, setSuccessMessage] = useState(false);
+    const [checkInTime, setCheckInTime] = useState("14:00");
+    const [checkOutTime, setCheckOutTime] = useState("10:00");
 
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
 
@@ -38,7 +42,7 @@ export default function AddListing() {
         //     }
         // });
 
-        console.log(data);
+        console.log(data, dayjs(checkInTime).format('HH:mm'), dayjs(checkOutTime).format('HH:mm'));
     }
 
     if (isLoading) return <div>Loading...</div>
@@ -109,12 +113,14 @@ export default function AddListing() {
                                 <input type="number" placeholder='Security deposit, excluding our 10% commission fee (optional)' {...register("deposit")} />
                             </div>
 
-                            <div className={styles.fieldsContainer}>
-                                <label htmlFor="checkInTime">Check-in time</label>
-                                <input id="checkInTime" type="time" step="1800" placeholder='Check-in time' {...register("checkInTime")} />
 
-                                <label htmlFor="checkOutTime">Check-out time</label>
-                                <input id="checkOutTime" type="time" step="1800" placeholder='Check-out time' {...register("checkOutTime")} />
+
+                            <div className={styles.fieldsContainer}>
+
+                                <div>
+                                    <MobileTimePicker className={styles.datePicker} label="Check In Time" defaultValue={dayjs('2022-04-17T15:30')} onChange={(value) => setCheckInTime(value)} />
+                                    <MobileTimePicker className={styles.datePicker} label="Check Out Time" defaultValue={dayjs('2022-04-17T15:30')} onChange={(value) => setCheckOutTime(value)} />
+                                </div>
 
                                 <label htmlFor="listingType">Listing Type</label>
                                 <select id="listingtype" placeholder='Listing Type' {...register('listingType')} >
